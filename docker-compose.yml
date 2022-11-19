@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  front-end:
+    build:
+      context: SCM-Simulator
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    links:
+      - back-end
+  back-end:
+    build:
+      context: server-SCM
+      dockerfile: Dockerfile
+    ports:
+      - "8075:8080"
